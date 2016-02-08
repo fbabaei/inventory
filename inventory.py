@@ -189,12 +189,12 @@ class Order(object):
                 logging.warning("\tCannot order more than 5 of %s item", i['Product'])
                 continue                
             else:
-                inventory.get_item(i['Product'], i['Quantity'])
+                self.inventory.get_item(i['Product'], i['Quantity'])
         print("="*20, "\nReport for order number:", self.order_number)
-        print("Available items:\n\t",inventory.available, "\nBack order items:\n\t",inventory.back_order)
-        print("Current Inventory:\n\t", inventory.current_inventory)
-        inventory.available = {}
-        inventory.back_order = {}
+        print("Available items:\n\t",self.inventory.available, "\nBack order items:\n\t",self.inventory.back_order)
+        print("Current Inventory:\n\t", self.inventory.current_inventory)
+        self.inventory.available = {}
+        self.inventory.back_order = {}
         ''' Returning order number ...
         '''
         return self.order_number
