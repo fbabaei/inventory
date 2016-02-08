@@ -1,7 +1,7 @@
 '''
 Created on Feb 7, 2016
 
-@author: Fereydoun
+@author: Fereydoun Babaei
 '''
 import random
 import logging
@@ -264,7 +264,6 @@ if __name__ == '__main__':
         allocator = Allocator(inventory, **o)
         print("__"*40,"\nEntering Order Number ", i, o)
     
-#         allocator = Allocator(inventory, **kwargs1)
     allocator.execute_orders()
     allocator.get_order()
 
