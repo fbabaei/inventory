@@ -13,7 +13,8 @@ logging.basicConfig(level=logging.DEBUG,
                     )
 
 class Products(object):
-    ''' This is the products class, the parameters it needs are like:
+    ''' The product class is for defining and initializing inventory.
+    It takes 'new' and a dictionary of product:quantity items.
         example: Products("new",{'A':150,'B':150,'C':150,'D':150,'E':150})    
     '''
     def __init__(self, *args):
@@ -23,10 +24,6 @@ class Products(object):
             self.Initial_Inventory = args[1]
             self.Current_Inventory = args[1]
             self.Products = list(args[1].keys())
-        elif args[0] == 'update':
-            for i in args[1].keys():
-                print("Product %s is added to the list of products " % i)
-                self.Products = list(args[1].keys())
                     
 class Inventory(object):
     '''
@@ -111,7 +108,6 @@ class Inventory(object):
         '''
         self.current_inventory[item] -= self.available[item]
         print( "Ordered item:", item , "\tAvailable:",self.available[item], "\tBack order: ", self.back_order[item])
-#         self.products=Products('update',self.current_inventory)
         
         ''' Returning current inventory '''
         return self.current_inventory
