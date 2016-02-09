@@ -9,7 +9,7 @@ import time
 from time import sleep
 
 logging.basicConfig(level=logging.DEBUG, 
-                    format='(%(message)s',
+                    format='%(message)s',
                     )
 
 class Products(object):
